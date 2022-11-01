@@ -1,0 +1,159 @@
+:root {
+    --font-large: #1e90ff;
+    --font-medium: #ffffff;
+  }
+  
+  body {
+    background-color: var(--p-surface) !important;
+  }
+  ::marker {
+    color: transparent;
+  }
+  /* --p-action-primary-depressed */
+  nav {
+    padding:0 24px;
+  }
+  .navItem {
+    font-size: var(--var-a);
+  }
+  nav > div:hover { 
+    cursor: pointer !important;
+  }
+  .Polaris-Text--heading3xl, .Polaris-Text--bodyLg {
+    margin-bottom: var(--p-space-5) !important;
+  }
+  .navItem::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #008060;
+    width: 90%;
+    height: 3px;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    grid-row-gap: 30px;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 37px;
+  }
+  
+  .header .Polaris-DisplayText {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .header .Polaris-Badge {
+    font-size: 12px !important;
+    position: relative;
+  }
+  .header .Polaris-Badge:before {
+    content: "";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    background-color: #008060;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: flex;
+    margin-right: 4px;
+  }
+  
+  .header .redirect-to-website {
+    display: grid;
+    place-items: center;
+    grid-row-gap: 9px;
+  }
+  .header .redirect-to-website button {
+    width: 90%;
+    margin-left: auto;
+  }
+  .header .subheading {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  .header .Polaris-Button__Text {
+    font-weight: 700;
+  }
+  
+
+  .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__TableCell--first {
+    display: none;
+  }
+
+  .Polaris-IndexTable__TableHeading--second:not(.Polaris-IndexTable__TableHeading--unselectable),
+  .Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{
+    padding-left: 16px !important;
+  }
+  th, td, .Polaris-IndexTable__StickyTableHeader--isSticky{
+    cursor: default;
+    height: 60px;
+    font-size: 14px !important;
+  }
+  .Polaris-IndexTable__StickyTableHeader--isSticky {
+    align-items: center;
+  }
+  .Polaris-Filters__TagsContainer {
+    display: none !important;
+  }
+    
+  .Polaris-TextField__ClearButton,
+  .Polaris-Filters-ConnectedFilterControl__Item button {
+    display: none !important;
+  }
+  .Polaris-Card {
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+    width: 100%;
+    padding: 2rem;
+  }
+  .Polaris-IndexTable__Table {
+    margin-top: 10px;
+    box-shadow: var(--p-shadow-card);
+    margin-bottom: 30px;
+  }
+  .pagination_container {
+    margin-bottom: 97px ;
+  }
+  .pagination_container div {
+    justify-content: center;
+  }
+
+  .Polaris-IndexTable__TableRow, tr {
+    filter: none;
+    border: 1px solid #e1e3e590;
+  }
+  /* komentarebi */
+  
+
+  .contact-div {
+    font-size: 15px;
+    width: 288px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #c9cccf;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    margin-bottom: 30px;
+  } 
+
+  .Polaris-Badge--statusAttention::before {
+    display: none !important;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .header .redirect-to-website {
+      place-items: baseline;
+    }
+    .header .redirect-to-website button {
+      width: 100%;
+    }
+  }

@@ -1,0 +1,52 @@
+{
+  "name": "pod_omv",
+  "version": "1.0.0",
+  "description": "pod_omv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukamusashvili/pod_omv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukamusashvili/pod_omv/issues"
+  },
+  "homepage": "https://github.com/lukamusashvili/pod_omv#readme",
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "@shopify/app-bridge": "^3.4.2",
+    "@shopify/app-bridge-react": "^3.4.2",
+    "@shopify/app-bridge-utils": "^3.4.2",
+    "@shopify/koa-shopify-auth": "^5.0.3",
+    "@shopify/koa-shopify-webhooks": "^4.4.4",
+    "@shopify/polaris": "^10.8.0",
+    "apollo-boost": "^0.4.9",
+    "dotenv": "^16.0.1",
+    "graphql": "^15.8.0",
+    "isomorphic-fetch": "^3.0.0",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
+    "mongoose": "^6.6.2",
+    "next": "^12.1.6",
+    "nodemon": "^2.0.16",
+    "react": "^18.1.0",
+    "react-apollo": "^3.1.5",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.1.0",
+    "react-filterable-table": "^0.3.441",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "^5.0.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
