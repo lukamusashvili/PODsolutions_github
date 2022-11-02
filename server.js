@@ -13,7 +13,7 @@ const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const cors = require('@koa/cors');
 const crypto = require('crypto')
 const { addWebhook } = require('./addWebhook');
-dotenv.config();
+dotenv.config(); //test
 
 var Production = 0; // 0 - Development; 1 - Production
 var hostVar
