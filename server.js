@@ -111,7 +111,7 @@ app.prepare().then(() => {
                 //     console.log(this.status);
                 //   }
                 // };
-                // xhr.open("POST", "https://www.podsolutionshopify.com/api/register-user", true);
+                // xhr.open("POST", "https://app.podsolutions.de/api/register-user", true);
                 // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
                 // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 // xhr.send(JSON.stringify(data2));
@@ -298,7 +298,7 @@ router.post('/webhooks/app/uninstalled', koaBody(), async (ctx) => {
       console.log(this.status);
     }
   };
-  xhr.open("POST", "https://www.podsolutionshopify.com/api/remove-user", true);
+  xhr.open("POST", "https://app.podsolutions.de/api/remove-user", true);
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.setRequestHeader('user', 'myvalentine');
@@ -407,7 +407,7 @@ async function manualOrderReceiver(shopName,orderId,endpoint) {
           await orders.updateOne({ shop: shopName, orderId: orderId }, {$set: {status: "failure"}})
         }
       };
-      xhttp.open("POST", "https://www.podsolutionshopify.com"+endpoint, true);
+      xhttp.open("POST", "https://app.podsolutions.de"+endpoint, true);
       xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
       xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhttp.setRequestHeader('user', 'myvalentine');
@@ -487,7 +487,18 @@ async function insertOrder(data){
 //#region SERVER OPTIONS *DONE*
   router.get("(/_next/static/.*)", handleRequest);
   router.get("/_next/webpack-hmr", handleRequest);
-  router.get("(.*)", handleRequest);
+  if(Production == 1){
+    router.get("/policy", async (ctx) => {
+        await handleRequest(ctx);
+    });
+
+    router.get("(.*)", verifyRequest({accessMode: 'offline',returnHeader: true, fallbackRoute: '/install'}), async () => {
+        const shop = ctx.query.shop; 
+        if (shop) 
+            ctx.set("Content-Security-Policy", `frame-ancestors https://${shop} https://admin.shopify.com https://shop.podsolutions.de wss://shop.podsolutions.de`);
+        await handleRequest(ctx);
+    }, handleRequest);
+  }
 
   server.use(router.allowedMethods());
   server.use(router.routes());
