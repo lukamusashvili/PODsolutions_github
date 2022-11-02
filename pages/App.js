@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Page, Layout} from "@shopify/polaris";
 import Header from '../components/Header.jsx'
-import MyTable from "../components/MyTable.jsx";
 import PolarisTable from '../components/PolarisTable'
 
 
@@ -15,7 +14,7 @@ export default function App() {
   useEffect(() => {
     const  a = window.location.ancestorOrigins[0]
     const shop = a.slice(8, a.length)
-    const URL = "https://7650-95-137-233-63.ngrok.io"
+    const URL = "https://shop.podsolutions.de"
   
     var myHeaders = new Headers();
     myHeaders.append("user", "myvalentine");
@@ -59,7 +58,6 @@ export default function App() {
             <Header name={`${shopName} shop`} shopStatus={shopStatus} badge={true} redirectInfo={true}/>
           </Layout.Section>
           <Layout.Section>
-            {/* <MyTable tableData = {tableData} /> */}
             <PolarisTable tableData = {tableData}/>
           </Layout.Section>
         </Layout>
