@@ -22,6 +22,7 @@ export default function Navbar() {
       <div className={location.pathname === "/" && "navItem"} style={style.li} onClick={() => redirect.dispatch(Redirect.Action.APP,  `/`)} >Main</div>
       <div className={location.pathname.includes("support")  && "navItem"} style={style.li} onClick={() => redirect.dispatch(Redirect.Action.APP, '/support')}>Support</div>
     </nav>
+
     
   )
 

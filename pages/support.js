@@ -9,7 +9,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 function support() {
   const [email, setemail] = useState("DGA@Gmail.com");
   const config = {
-    apiKey: '941b92d8ced83eb453f32d0f13e45885',
+    apiKey: '341e15139cc5c6d65eb5b8027b80908b',
     host: new URLSearchParams(location.search).get("host"),
     forceRedirect: true
   };
@@ -36,7 +36,7 @@ function support() {
             <img src="/Vector.svg" alt="copy" style={{ cursor: "pointer" }} />
           </CopyToClipboard>
         </div>
-        <p style={{ fontWeight: 500 }} onClick={() => redirect.dispatch(Redirect.Action.APP, '/policy')}>PRIVACY & COOKIE POLICY</p>
+        <p style={{ fontWeight: 500, cursor: "pointer" }} onClick={() => redirect.dispatch(Redirect.Action.APP, '/policy')}>PRIVACY & COOKIE POLICY</p>
       </Page>
     </div>
   );
